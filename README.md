@@ -20,15 +20,15 @@ Each line should be no longer than 80 characters. If a line goes longer than 80 
 ```javascript
 // Good
 doSomething(argument1, argument2, argument3, argument4,
-        argument5);
+		argument5);
 
 // Bad: Following line only indented four spaces
 doSomething(argument1, argument2, argument3, argument4,
-    argument5);
+	argument5);
 
 // Bad: Breaking before operator
 doSomething(argument1, argument2, argument3, argument4
-        , argument5);
+		, argument5);
 ```
 
 ## Primitive Literals
@@ -88,30 +88,30 @@ var person = null;
 
 // Good
 function getPerson() {
-    if (condition) {
-        return new Person("Nicholas");
-    } else {
-        return null;
-    }
+	if (condition) {
+		return new Person("Nicholas");
+	} else {
+		return null;
+	}
 }
 
 // Good
 var person = getPerson();
 if (person !== null){
-    doSomething();
+	doSomething();
 }
 
 // Bad: Testing against uninitialized variable
 var person;
 if (person != null){
-    doSomething();
+	doSomething();
 }
 
 // Bad: Testing to see if an argument was passed
 function doSomething(arg1, arg2, arg3, arg4){
-    if (arg4 != null){
-        doSomethingElse();
-    }
+	if (arg4 != null){
+		doSomethingElse();
+	}
 }
 ```
 
@@ -120,12 +120,12 @@ Never use the special value `undefined`. To see if a variable has been defined, 
 ```javascript
 // Good
 if (typeof variable == "undefined") {
-    // do something
+	// do something
 }
 
 // Bad: Using undefined literal
 if (variable == undefined) {
-    // do something
+	// do something
 }
 ```
 
@@ -139,12 +139,12 @@ var found = (values[i] === item);
 
 // Good
 if (found && (count > 10)) {
-    doSomething();
+	doSomething();
 }
 
 // Good
 for (i = 0; i < count; i++) {
-    process(i);
+	process(i);
 }
 
 // Bad: Missing spaces
@@ -152,12 +152,12 @@ var found = (values[i]===item);
 
 // Bad: Missing spaces
 if (found&&(count>10)) {
-    doSomething();
+	doSomething();
 }
 
 // Bad: Missing spaces
 for (i=0; i<count; i++) {
-    process(i);
+	process(i);
 }
 ```
 
@@ -171,12 +171,12 @@ var found = (values[i] === item);
 
 // Good
 if (found && (count > 10)) {
-    doSomething();
+	doSomething();
 }
 
 // Good
 for (i = 0; i < count; i++) {
-    process(i);
+	process(i);
 }
 
 // Bad: Extra space after opening paren
@@ -184,12 +184,12 @@ var found = ( values[i] === item);
 
 // Bad: Extra space before closing paren
 if (found && (count > 10) ) {
-    doSomething();
+	doSomething();
 }
 
 // Bad: Extra space around argument
 for (i = 0; i < count; i++) {
-    process( i );
+	process( i );
 }
 ```
 
@@ -209,31 +209,31 @@ Examples:
 // Good
 var object = {
 
-    key1: value1,
-    key2: value2,
+	key1: value1,
+	key2: value2,
 
-    func: function() {
-        // do something
-    },
+	func: function() {
+		// do something
+	},
 
-    key3: value3
+	key3: value3
 };
 
 // Bad: Improper indentation
 var object = {
-                key1: value1,
-                key2: value2
-            };
+				key1: value1,
+				key2: value2
+			};
 
 // Bad: Missing blank lines around function
 var object = {
 
-    key1: value1,
-    key2: value2,
-    func: function() {
-        // do something
-    },
-    key3: value3
+	key1: value1,
+	key2: value2,
+	func: function() {
+		// do something
+	},
+	key3: value3
 };
 ```
 
@@ -242,8 +242,8 @@ When an object literal is passed to a function, the opening brace should be on t
 ```javascript
 // Good
 doSomething({
-    key1: value1,
-    key2: value2
+	key1: value1,
+	key2: value2
 });
 
 // Bad: All on one line
@@ -271,20 +271,20 @@ When on a separate line, a single-line comment should be at the same indentation
 // Good
 if (condition){
 
-    // if you made it here, then all security checks passed
-    allowed();
+	// if you made it here, then all security checks passed
+	allowed();
 }
 
 // Bad: No empty line preceding comment
 if (condition){
-    // if you made it here, then all security checks passed
-    allowed();
+	// if you made it here, then all security checks passed
+	allowed();
 }
 
 // Bad: Wrong indentation
 if (condition){
 // if you made it here, then all security checks passed
-    allowed();
+	allowed();
 }
 
 // Bad: This should be a multiline comment
@@ -294,16 +294,16 @@ if (condition){
 // from several different functions and may change during the
 // lifetime of the session.
 if (condition){
-    // if you made it here, then all security checks passed
-    allowed();
+	// if you made it here, then all security checks passed
+	allowed();
 }
 ```
 
-For single-line comments at the end of a line, ensure that there is at least one indentation level between the end of the code and the beginning of the comment:
+For single-line comments at the end of a line, ensure that there is one space between the end of the code and the beginning of the comment:
 
 ```javascript
 // Good
-var result = something + somethingElse;    // somethingElse will never be null
+var result = something + somethingElse; // somethingElse will never be null
 
 // Bad: Not enough space between code and comment
 var result = something + somethingElse;// somethingElse will never be null
