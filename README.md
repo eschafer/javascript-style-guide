@@ -9,7 +9,7 @@ Each indentation level is made up of four spaces. Do not use tabs.
 ```javascript
 // Good
 if (true) {
-    doSomething();
+	doSomething();
 }
 ```
 
