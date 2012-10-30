@@ -4,7 +4,7 @@ Note: this style guide doesn't currently match the guidelines I follow, but it w
 
 ## Indentation
 
-Each indentation level is made up of four spaces. Do not use tabs.
+Each indentation level is made up of one tab. Do not use spaces.
 
 ```javascript
 // Good
