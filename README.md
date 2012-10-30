@@ -17,7 +17,7 @@ if (true) {
 
 Each line should be no longer than 80 characters. If a line goes longer than 80 characters, it should be wrapped after an operator (comma, plus, etc.). The following line should be indented two levels (eight characters).
 
-```javascript 
+```javascript
 // Good
 doSomething(argument1, argument2, argument3, argument4,
         argument5);
@@ -29,13 +29,13 @@ doSomething(argument1, argument2, argument3, argument4,
 // Bad: Breaking before operator
 doSomething(argument1, argument2, argument3, argument4
         , argument5);
-``` 
+```
 
 ## Primitive Literals
 
 Strings should always use double quotes (never single quotes) and should always appear on a single line. Never use a slash to create a new line in a string.
 
-```javascript 
+```javascript
 // Good
 var name = "Nicholas";
 
@@ -45,11 +45,11 @@ var name = 'Nicholas';
 // Bad: Wrapping to second line
 var longString = "Here's the story, of a man \
 named Brady.";
-``` 
+```
 
 Numbers should be written as decimal integers, e-notation integers, hexadecimal integers, or floating-point decimals with at least one digit before and one digit after the decimal point. Never use octal literals.
 
-```javascript 
+```javascript
 // Good
 var count = 10;
 
@@ -71,7 +71,7 @@ var price = .1;
 
 // Bad: Octal (base 8) is deprecated
 var num = 010;
-``` 
+```
 
 The special value `null` should be used only in the following situations:
 
@@ -82,7 +82,7 @@ The special value `null` should be used only in the following situations:
 
 Examples:
 
-```javascript 
+```javascript
 // Good
 var person = null;
 
@@ -113,11 +113,11 @@ function doSomething(arg1, arg2, arg3, arg4){
         doSomethingElse();
     }
 }
-``` 
+```
 
 Never use the special value `undefined`. To see if a variable has been defined, use the `typeof` operator:
 
-```javascript 
+```javascript
 // Good
 if (typeof variable == "undefined") {
     // do something
@@ -127,13 +127,13 @@ if (typeof variable == "undefined") {
 if (variable == undefined) {
     // do something
 }
-``` 
+```
 
 ## Operator Spacing
 
 Operators with two operands must be preceded and followed by a single space to make the expression clear. Operators include assignments and logical operators.
 
-```javascript 
+```javascript
 // Good
 var found = (values[i] === item);
 
@@ -159,13 +159,13 @@ if (found&&(count>10)) {
 for (i=0; i<count; i++) {
     process(i);
 }
-``` 
+```
 
 ## Parentheses Spacing
 
 When parentheses are used, there should be no white space immediately after the opening paren or immediately before the closing paren.
 
-```javascript 
+```javascript
 // Good
 var found = (values[i] === item);
 
@@ -191,7 +191,7 @@ if (found && (count > 10) ) {
 for (i = 0; i < count; i++) {
     process( i );
 }
-``` 
+```
 
 ## Object Literals
 
@@ -205,7 +205,7 @@ Object literals should have the following format:
 
 Examples:
 
-```javascript 
+```javascript
 // Good
 var object = {
 
@@ -235,11 +235,11 @@ var object = {
     },
     key3: value3
 };
-``` 
+```
 
 When an object literal is passed to a function, the opening brace should be on the same line as if the value is a variable. All other formatting rules listed earlier still apply.
 
-```javascript 
+```javascript
 // Good
 doSomething({
     key1: value1,
@@ -248,7 +248,7 @@ doSomething({
 
 // Bad: All on one line
 doSomething({ key1: value1, key2: value2 });
-``` 
+```
 
 ## Comments
 
@@ -267,7 +267,7 @@ Single-line comments should be used to documentation one line of code or a group
 
 When on a separate line, a single-line comment should be at the same indentation level as the code it describes and be preceded by a single line. Never use multiple single-line comments on consecutive lines; use a multiline comment instead.
 
-```javascript 
+```javascript
 // Good
 if (condition){
 
@@ -297,27 +297,27 @@ if (condition){
     // if you made it here, then all security checks passed
     allowed();
 }
-``` 
+```
 
 For single-line comments at the end of a line, ensure that there is at least one indentation level between the end of the code and the beginning of the comment:
 
-```javascript 
+```javascript
 // Good
 var result = something + somethingElse;    // somethingElse will never be null
 
 // Bad: Not enough space between code and comment
 var result = something + somethingElse;// somethingElse will never be null
-``` 
+```
 
 The only acceptable time to have multiple single-line comments on successive lines is to comment out large sections of code. Multiline comments should not be used for this purpose.
 
-```javascript 
+```javascript
 // Good
 // if (condition){
 //     doSomething();
 //     thenDoSomethingElse();
 // }
-``` 
+```
 
 ### Multiline Comments
 
@@ -329,7 +329,7 @@ Multiline comments should be used to document code that requires more explanatio
 
 The first line of multiline comments should be indented to the same level as the code it describes. Each subsequent line should have the same indentation plus one space (for proper alignment of the `*` characters). Each multiline comment should be preceded by one empty line.
 
-```javascript 
+```javascript
 // Good
 if (condition){
 
@@ -370,7 +370,7 @@ if (condition){
 
 // Bad: Don't use multi-line comments for trailing comments
 var result = something + somethingElse;    /*somethingElse will never be null*/
-``` 
+```
 
 ### Comment Annotations
 
@@ -395,7 +395,7 @@ These annotations may be used with either single-line or multiline comments and 
 
 Examples:
 
-```javascript 
+```javascript
 // Good
 // TODO: I'd like to find a way to make this faster
 doSomething();
@@ -425,13 +425,13 @@ doSomething();
 if (document.all) {
     doSomething();
 }
-``` 
+```
 
 ## Variable Declarations
 
 All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using a single `var` statement with one variable per line. All lines after the first should be indented one level so that the variable names line up. Variables should be initialized when declared if applicable, and the equals operator should be at a consistent indentation level. Initialized variables should come first followed by uninitialized variables.
 
-```javascript 
+```javascript
 // Good
 var count   = 10,
     name    = "Nicholas",
@@ -466,7 +466,7 @@ var count   = 10,
 
 var found   = false,
     empty;
-``` 
+```
 
 Always declare variables. Implied globals should not be used.
 
@@ -474,7 +474,7 @@ Always declare variables. Implied globals should not be used.
 
 Functions should be declared before they are used. When a function is not a method (that is, not attached to an object), it should be defined using the function declaration format (not function expression format or using the Function constructor). There should be no space between the function name and the opening parenthesis. There should be one space between the closing parenthesis and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parenthesis or before the closing parenthesis. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
 
-```javascript 
+```javascript
 // Good
 function doSomething(arg1, arg2) {
     return arg1 + arg2;
@@ -498,11 +498,11 @@ function doSomething(arg1, arg2)
 
 // Bad: Using Function constructor
 var doSomething = new Function("arg1", "arg2", "return arg1 + arg2");
-``` 
+```
 
 Functions declared inside of other functions should be declared immediately after the `var` statement.
 
-```javascript 
+```javascript
 // Good
 function outer() {
 
@@ -532,11 +532,11 @@ function outer() {
 
         // code that uses inner()
 }
-``` 
+```
 
 Anonymous functions may be used for assignment of object methods or as arguments to other functions. There should be no space between the `function` keyword and the opening parenthesis.
 
-```javascript 
+```javascript
 // Good
 object.method = function() {
     // code
@@ -546,11 +546,11 @@ object.method = function() {
 object.method = function () {
     // code
 };
-``` 
+```
 
 Immediately invoked functions should surround the entire function call with parentheses.
 
-```javascript 
+```javascript
 // Good
 var value = (function() {
 
@@ -580,7 +580,7 @@ var value = (function() {
         message: "Hi"
     }
 })();
-``` 
+```
 
 ## Naming
 
@@ -588,7 +588,7 @@ Care should be taken to name variables and functions properly. Names should be l
 
 Variable names should be formatted in camel case with the first letter lowercase and the first letter of each subsequent word uppercase. The first word of a variable name should be a noun (not a verb) to avoid confusion with functions. Do not use underscores in variable names.
 
-```javascript 
+```javascript
 // Good
 var accountNumber = "8401-1";
 
@@ -600,11 +600,11 @@ var getAccountNumber = "8401-1";
 
 // Bad: Uses underscore
 var account_number = "8401-1";
-``` 
+```
 
 Function names should also be formatted using camel case. The first word of a function name should be a verb (not a noun) to avoid confusion with variables. Do not use underscores in function names.
 
-```javascript 
+```javascript
 // Good
 function doSomething() {
     // code
@@ -624,11 +624,11 @@ function car() {
 function do_something() {
     // code
 }
-``` 
+```
 
 Constructor functions—functions used with the `new` operator to create new objects— should be formatted in camel case but must begin with an uppercase letter. Constructor function names should begin with a nonverb, because `new` is the action of creating an object instance.
 
-```javascript 
+```javascript
 // Good
 function MyObject() {
     // code
@@ -648,11 +648,11 @@ function My_Object() {
 function getMyObject() {
     // code
 }
-``` 
+```
 
 Variables that act as constants (values that won’t be changed) should be formatted using all uppercase letters with words separated by a single underscore.
 
-```javascript 
+```javascript
 // Good
 var TOTAL_COUNT = 10;
 
@@ -661,11 +661,11 @@ var totalCount = 10;
 
 // Bad: Mixed case
 var total_COUNT = 10;
-``` 
+```
 
 Object properties follow the same naming conventions as variables. Object methods follow the same naming conventions as functions. If a property or method is meant to be private, then it should be prefixed with an underscore character.
 
-```javascript 
+```javascript
 // Good
 var object = {
     _count: 10,
@@ -674,13 +674,13 @@ var object = {
         return this._count;
     }
 };
-``` 
+```
 
 ## Strict Mode
 
 Strict mode should be used only inside of functions, never globally.
 
-```javascript 
+```javascript
 // Bad: Global strict mode
 "use strict";
 
@@ -694,11 +694,11 @@ function doSomething() {
 
     // code
 }
-``` 
+```
 
 If you want strict mode to apply to multiple functions without needing to write `"use strict"` multiple times, use immediate function invocation:
 
-```javascript 
+```javascript
 // Good
 (function() {
     "use strict";
@@ -711,43 +711,43 @@ If you want strict mode to apply to multiple functions without needing to write 
         // code
     }
 }());
-``` 
+```
 
 ## Assignments
 
 When assigning a value to a variable, use parentheses around a right-side expression that contains a comparison.
 
-```javascript 
+```javascript
 // Good
 var flag = (i < count);
 
 // Bad: Missing parentheses
 var flag = i < count;
-``` 
+```
 
 ## Equality Operators
 
 Use `===` and `!==` instead of `==` and `!=` to avoid type coercion errors.
 
-```javascript 
+```javascript
 // Good
 var same = (a === b);
 
 // Bad: Using ==
 var same = (a == b);
-``` 
+```
 
 ## Ternary Operator
 
 The ternary operator should be used only for assigning values conditionally and never as a shortcut for an `if` statement.
 
-```javascript 
+```javascript
 // Good
 var value = condition ? value1 : value2;
 
 // Bad: no assignment, should be an if statement
 condition ? doSomething() : doSomethingElse();
-``` 
+```
 
 ## Statements
 
@@ -755,26 +755,26 @@ condition ? doSomething() : doSomethingElse();
 
 Each line should contain at most one statement. All simple statements should end with a semicolon (`;`).
 
-```javascript 
+```javascript
 // Good
 count++;
 a = b;
 
 // Bad: Multiple statements on one line
 count++; a = b;
-``` 
+```
 
 ### return Statement
 
 A `return` statement with a value should not use parentheses unless they make the return value more obvious in some way. Example:
 
-```javascript 
+```javascript
 return;
 
 return collection.size();
 
 return (size > 0 ? size : defaultSize);
-``` 
+```
 
 ### Compound Statements
 
@@ -788,7 +788,7 @@ Compound statements are lists of statements enclosed inside of braces.
 
 The `if` class of statements should have the following form:
 
-```javascript 
+```javascript
 if (condition) {
     statements
 }
@@ -806,11 +806,11 @@ if (condition) {
 } else {
     statements
 }
-``` 
+```
 
 It is never permissible to omit the braces in any part of an `if` statement.
 
-```javascript 
+```javascript
 // Good
 if (condition) {
     doSomething();
@@ -830,13 +830,13 @@ if (condition) { doSomething(); }
 
 // Bad: All on one line without braces
 if (condition) doSomething();
-``` 
+```
 
 ### for Statement
 
 The `for` class of statements should have the following form:
 
-```javascript 
+```javascript
 for (initialization; condition; update) {
     statements
 }
@@ -844,11 +844,11 @@ for (initialization; condition; update) {
 for (variable in object) {
     statements
 }
-``` 
+```
 
 Variables should not be declared in the initialization section of a `for` statement.
 
-```javascript 
+```javascript
 // Good
 var i,
     len;
@@ -866,7 +866,7 @@ for (var i=0, len=10; i < len; i++) {
 for (var prop in object) {
     // code
 }
-``` 
+```
 
 When using a `for-in` statement, double-check if you need to use `hasOwnProperty()` to filter out object members.
 
@@ -874,21 +874,21 @@ When using a `for-in` statement, double-check if you need to use `hasOwnProperty
 
 The `while` class of statements should have the following form:
 
-```javascript 
+```javascript
 while (condition) {
     statements
 }
-``` 
+```
 
 ### do Statement
 
 The `do` class of statements should have the following form:
 
-```javascript 
+```javascript
 do {
     statements
 } while (condition);
-``` 
+```
 
 Note the use of a semicolon as the final part of this statement. There should be a space before and after the `while` keyword.
 
@@ -896,7 +896,7 @@ Note the use of a semicolon as the final part of this statement. There should be
 
 The `switch` class of statements should have the following form:
 
-```javascript 
+```javascript
 switch (expression) {
     case expression:
         statements
@@ -904,13 +904,13 @@ switch (expression) {
     default:
         statements
 }
-``` 
+```
 
 Each `case` is indented one level under the `switch`. Each `case` after the first, including `default`, should be preceded by a single empty line.
 
 Each group of statements (except the default) should end with `break`, `return`, `throw`, or a comment indicating fall-through.
 
-```javascript 
+```javascript
 // Good
 switch (value) {
     case 1:
@@ -926,11 +926,11 @@ switch (value) {
     default:
         throw new Error("This shouldn't happen.);
 }
-``` 
+```
 
 If a `switch` doesn’t have a `default` case, then it should be indicated with a comment.
 
-```javascript 
+```javascript
 // Good
 switch (value) {
     case 1:
@@ -945,13 +945,13 @@ switch (value) {
 
     // no default
 }
-``` 
+```
 
 ### try Statement
 
 The `try` class of statements should have the following form:
 
-```javascript 
+```javascript
 try {
     statements
 } catch (variable) {
@@ -965,7 +965,7 @@ try {
 } finally {
     statements
 }
-``` 
+```
 
 ## White Space
 
