@@ -314,8 +314,8 @@ The only acceptable time to have multiple single-line comments on successive lin
 ```javascript
 // Good
 // if (condition){
-//     doSomething();
-//     thenDoSomethingElse();
+// 	doSomething();
+// 	thenDoSomethingElse();
 // }
 ```
 
@@ -333,29 +333,29 @@ The first line of multiline comments should be indented to the same level as the
 // Good
 if (condition){
 
-    /*
-     * if you made it here,
-     * then all security checks passed
-     */
-    allowed();
+	/*
+	 * if you made it here,
+	 * then all security checks passed
+	 */
+	allowed();
 }
 
 // Bad: No empty line preceding comment
 if (condition){
-    /*
-     * if you made it here,
-     * then all security checks passed
-     */
-    allowed();
+	/*
+	 * if you made it here,
+	 * then all security checks passed
+	 */
+	allowed();
 }
 
 // Bad: Missing a space after asterisk
 if (condition){
-    /*
-     *if you made it here,
-     *then all security checks passed
-     */
-    allowed();
+	/*
+	 *if you made it here,
+	 *then all security checks passed
+	 */
+	allowed();
 }
 
 // Bad: Wrong indentation
@@ -365,11 +365,11 @@ if (condition){
  * if you made it here,
  * then all security checks passed
  */
-    allowed();
+	allowed();
 }
 
 // Bad: Don't use multi-line comments for trailing comments
-var result = something + somethingElse;    /*somethingElse will never be null*/
+var result = something + somethingElse; /*somethingElse will never be null*/
 ```
 
 ### Comment Annotations
@@ -407,13 +407,13 @@ doSomething();
  * get replaced before v1.2.
  */
 if (document.all) {
-    doSomething();
+	doSomething();
 }
 
 // Good
 // REVIEW: Is there a better way to do this?
 if (document.all) {
-    doSomething();
+	doSomething();
 }
 
 // Bad: Annotation spacing is incorrect
@@ -421,9 +421,9 @@ if (document.all) {
 doSomething();
 
 // Bad: Comment should be at the same indentation as code
-    // REVIEW: Is there a better way to do this?
+	// REVIEW: Is there a better way to do this?
 if (document.all) {
-    doSomething();
+	doSomething();
 }
 ```
 
@@ -477,23 +477,23 @@ Functions should be declared before they are used. When a function is not a meth
 ```javascript
 // Good
 function doSomething(arg1, arg2) {
-    return arg1 + arg2;
+	return arg1 + arg2;
 }
 
 // Bad: Improper spacing of first line
 function doSomething (arg1, arg2){
-    return arg1 + arg2;
+	return arg1 + arg2;
 }
 
 // Bad: Function expression
 var doSomething = function(arg1, arg2) {
-    return arg1 + arg2;
+	return arg1 + arg2;
 };
 
 // Bad: Left brace on wrong line
 function doSomething(arg1, arg2)
 {
-    return arg1 + arg2;
+	return arg1 + arg2;
 }
 
 // Bad: Using Function constructor
@@ -506,31 +506,31 @@ Functions declared inside of other functions should be declared immediately afte
 // Good
 function outer() {
 
-    var count   = 10,
-        name    = "Nicholas",
-        found   = false,
-        empty;
+	var count   = 10,
+	    name    = "Nicholas",
+	    found   = false,
+	    empty;
 
-    function inner() {
-        // code
-    }
+	function inner() {
+		// code
+	}
 
-    // code that uses inner()
+	// code that uses inner()
 }
 
 // Bad: Inner function declared before variables
 function outer() {
 
-    function inner() {
-        // code
-    }
+	function inner() {
+		// code
+	}
 
-    var count    = 10,
-        name     = "Nicholas",
-        found    = false,
-        empty;
+	var count    = 10,
+	    name     = "Nicholas",
+	    found    = false,
+	    empty;
 
-        // code that uses inner()
+		// code that uses inner()
 }
 ```
 
@@ -539,12 +539,12 @@ Anonymous functions may be used for assignment of object methods or as arguments
 ```javascript
 // Good
 object.method = function() {
-    // code
+	// code
 };
 
 // Bad: Incorrect spacing
 object.method = function () {
-    // code
+	// code
 };
 ```
 
@@ -554,31 +554,31 @@ Immediately invoked functions should surround the entire function call with pare
 // Good
 var value = (function() {
 
-    // function body
+	// function body
 
-    return {
-        message: "Hi"
-    }
+	return {
+		message: "Hi"
+	}
 }());
 
 // Bad: No parentheses around function call
 var value = function() {
 
-    // function body
+	// function body
 
-    return {
-        message: "Hi"
-    }
+	return {
+		message: "Hi"
+	}
 }();
 
 // Bad: Improper parentheses placement
 var value = (function() {
 
-    // function body
+	// function body
 
-    return {
-        message: "Hi"
-    }
+	return {
+		message: "Hi"
+	}
 })();
 ```
 
@@ -607,22 +607,22 @@ Function names should also be formatted using camel case. The first word of a fu
 ```javascript
 // Good
 function doSomething() {
-    // code
+	// code
 }
 
 // Bad: Begins with uppercase letter
 function DoSomething() {
-    // code
+	// code
 }
 
 // Bad: Begins with noun
 function car() {
-    // code
+	// code
 }
 
 // Bad: Uses underscores
 function do_something() {
-    // code
+	// code
 }
 ```
 
@@ -631,22 +631,22 @@ Constructor functions—functions used with the `new` operator to create new obj
 ```javascript
 // Good
 function MyObject() {
-    // code
+	// code
 }
 
 // Bad: Begins with lowercase letter
 function myObject() {
-    // code
+	// code
 }
 
 // Bad: Uses underscores
 function My_Object() {
-    // code
+	// code
 }
 
 // Bad: Begins with verb
 function getMyObject() {
-    // code
+	// code
 }
 ```
 
@@ -668,11 +668,11 @@ Object properties follow the same naming conventions as variables. Object method
 ```javascript
 // Good
 var object = {
-    _count: 10,
+	_count: 10,
 
-    _getCount: function () {
-        return this._count;
-    }
+	_getCount: function () {
+		return this._count;
+	}
 };
 ```
 
@@ -685,14 +685,14 @@ Strict mode should be used only inside of functions, never globally.
 "use strict";
 
 function doSomething() {
-    // code
+	// code
 }
 
 // Good
 function doSomething() {
-    "use strict";
+	"use strict";
 
-    // code
+	// code
 }
 ```
 
@@ -701,15 +701,15 @@ If you want strict mode to apply to multiple functions without needing to write 
 ```javascript
 // Good
 (function() {
-    "use strict";
+	"use strict";
 
-    function doSomething() {
-        // code
-    }
+	function doSomething() {
+		// code
+	}
 
-    function doSomethingElse() {
-        // code
-    }
+	function doSomethingElse() {
+		// code
+	}
 }());
 ```
 
@@ -790,21 +790,21 @@ The `if` class of statements should have the following form:
 
 ```javascript
 if (condition) {
-    statements
+	statements
 }
 
 if (condition) {
-    statements
+	statements
 } else {
-    statements
+	statements
 }
 
 if (condition) {
-    statements
+	statements
 } else if (condition) {
-    statements
+	statements
 } else {
-    statements
+	statements
 }
 ```
 
@@ -813,17 +813,17 @@ It is never permissible to omit the braces in any part of an `if` statement.
 ```javascript
 // Good
 if (condition) {
-    doSomething();
+	doSomething();
 }
 
 // Bad: Improper spacing
 if(condition){
-    doSomething();
+	doSomething();
 }
 
 // Bad: Missing braces
 if (condition)
-    doSomething();
+	doSomething();
 
 // Bad: All on one line
 if (condition) { doSomething(); }
@@ -838,11 +838,11 @@ The `for` class of statements should have the following form:
 
 ```javascript
 for (initialization; condition; update) {
-    statements
+	statements
 }
 
 for (variable in object) {
-    statements
+	statements
 }
 ```
 
@@ -854,17 +854,17 @@ var i,
     len;
 
 for (i=0, len=10; i < len; i++) {
-    // code
+	// code
 }
 
 // Bad: Variables declared during initialization
 for (var i=0, len=10; i < len; i++) {
-    // code
+	// code
 }
 
 // Bad: Variables declared during initialization
 for (var prop in object) {
-    // code
+	// code
 }
 ```
 
@@ -876,7 +876,7 @@ The `while` class of statements should have the following form:
 
 ```javascript
 while (condition) {
-    statements
+	statements
 }
 ```
 
@@ -886,7 +886,7 @@ The `do` class of statements should have the following form:
 
 ```javascript
 do {
-    statements
+	statements
 } while (condition);
 ```
 
@@ -898,11 +898,11 @@ The `switch` class of statements should have the following form:
 
 ```javascript
 switch (expression) {
-    case expression:
-        statements
+	case expression:
+		statements
 
-    default:
-        statements
+	default:
+		statements
 }
 ```
 
@@ -913,18 +913,18 @@ Each group of statements (except the default) should end with `break`, `return`,
 ```javascript
 // Good
 switch (value) {
-    case 1:
-        /* falls through */
+	case 1:
+		/* falls through */
 
-    case 2:
-        doSomething();
-        break;
+	case 2:
+		doSomething();
+		break;
 
-    case 3:
-        return true;
+	case 3:
+		return true;
 
-    default:
-        throw new Error("This shouldn't happen.);
+	default:
+		throw new Error("This shouldn't happen.);
 }
 ```
 
@@ -933,17 +933,17 @@ If a `switch` doesn’t have a `default` case, then it should be indicated with 
 ```javascript
 // Good
 switch (value) {
-    case 1:
-        /*falls through*/
+	case 1:
+		/*falls through*/
 
-    case 2:
-        doSomething();
-        break;
+	case 2:
+		doSomething();
+		break;
 
-    case 3:
-        return true;
+	case 3:
+		return true;
 
-    // no default
+	// no default
 }
 ```
 
@@ -953,17 +953,17 @@ The `try` class of statements should have the following form:
 
 ```javascript
 try {
-    statements
+	statements
 } catch (variable) {
-    statements
+	statements
 }
 
 try {
-    statements
+	statements
 } catch (variable) {
-    statements
+	statements
 } finally {
-    statements
+	statements
 }
 ```
 
