@@ -15,20 +15,20 @@ if (true) {
 
 ## Line Length
 
-Each line should be no longer than 80 characters. If a line goes longer than 80 characters, it should be wrapped after an operator (comma, plus, etc.). The following line should be indented two levels (eight characters).
+Each line should be no longer than 80 characters. If a line goes longer than 80 characters, it should be wrapped after an operator (comma, plus, etc.). The following line should be indented two levels.
 
 ```javascript
 // Good
-doSomething(argument1, argument2, argument3, argument4,
-		argument5);
+doSomething(argument1, argument2, argument3, argument4, argument5, argument6,
+		argument7);
 
-// Bad: Following line only indented four spaces
-doSomething(argument1, argument2, argument3, argument4,
-	argument5);
+// Bad: Following line only indented one level
+doSomething(argument1, argument2, argument3, argument4, argument5, argument6,
+	argument7);
 
 // Bad: Breaking before operator
-doSomething(argument1, argument2, argument3, argument4
-		, argument5);
+doSomething(argument1, argument2, argument3, argument4, argument5, argument6
+		, argument7);
 ```
 
 ## Primitive Literals
@@ -37,14 +37,14 @@ Strings should always use double quotes (never single quotes) and should always 
 
 ```javascript
 // Good
-var name = "Nicholas";
+var name = "Elizabeth";
 
 // Bad: Single quotes
-var name = 'Nicholas';
+var name = 'Elizabeth';
 
 // Bad: Wrapping to second line
-var longString = "Here's the story, of a man \
-named Brady.";
+var longString = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, \
+sed diam nonummy nibh euismod";
 ```
 
 Numbers should be written as decimal integers, e-notation integers, hexadecimal integers, or floating-point decimals with at least one digit before and one digit after the decimal point. Never use octal literals.
@@ -89,7 +89,7 @@ var person = null;
 // Good
 function getPerson() {
 	if (condition) {
-		return new Person("Nicholas");
+		return new Person("Elizabeth");
 	} else {
 		return null;
 	}
@@ -97,19 +97,19 @@ function getPerson() {
 
 // Good
 var person = getPerson();
-if (person !== null){
+if (person !== null) {
 	doSomething();
 }
 
 // Bad: Testing against uninitialized variable
 var person;
-if (person != null){
+if (person !== null) {
 	doSomething();
 }
 
 // Bad: Testing to see if an argument was passed
-function doSomething(arg1, arg2, arg3, arg4){
-	if (arg4 != null){
+function doSomething(arg1, arg2, arg3, arg4) {
+	if (arg4 !== null) {
 		doSomethingElse();
 	}
 }
@@ -119,12 +119,12 @@ Never use the special value `undefined`. To see if a variable has been defined, 
 
 ```javascript
 // Good
-if (typeof variable == "undefined") {
+if (typeof variable === "undefined") {
 	// do something
 }
 
 // Bad: Using undefined literal
-if (variable == undefined) {
+if (variable === undefined) {
 	// do something
 }
 ```
@@ -269,20 +269,20 @@ When on a separate line, a single-line comment should be at the same indentation
 
 ```javascript
 // Good
-if (condition){
+if (condition) {
 
 	// if you made it here, then all security checks passed
 	allowed();
 }
 
 // Bad: No empty line preceding comment
-if (condition){
+if (condition) {
 	// if you made it here, then all security checks passed
 	allowed();
 }
 
 // Bad: Wrong indentation
-if (condition){
+if (condition) {
 // if you made it here, then all security checks passed
 	allowed();
 }
@@ -293,7 +293,7 @@ if (condition){
 // and only then allow the user in. The condition is calculated
 // from several different functions and may change during the
 // lifetime of the session.
-if (condition){
+if (condition) {
 	// if you made it here, then all security checks passed
 	allowed();
 }
@@ -313,7 +313,7 @@ The only acceptable time to have multiple single-line comments on successive lin
 
 ```javascript
 // Good
-// if (condition){
+// if (condition) {
 // 	doSomething();
 // 	thenDoSomethingElse();
 // }
@@ -331,7 +331,7 @@ The first line of multiline comments should be indented to the same level as the
 
 ```javascript
 // Good
-if (condition){
+if (condition) {
 
 	/*
 	 * if you made it here,
@@ -341,7 +341,7 @@ if (condition){
 }
 
 // Bad: No empty line preceding comment
-if (condition){
+if (condition) {
 	/*
 	 * if you made it here,
 	 * then all security checks passed
@@ -350,7 +350,7 @@ if (condition){
 }
 
 // Bad: Missing a space after asterisk
-if (condition){
+if (condition) {
 	/*
 	 *if you made it here,
 	 *then all security checks passed
@@ -359,7 +359,7 @@ if (condition){
 }
 
 // Bad: Wrong indentation
-if (condition){
+if (condition) {
 
 /*
  * if you made it here,
@@ -434,35 +434,35 @@ All variables should be declared before they are used. Variable declarations sho
 ```javascript
 // Good
 var count   = 10,
-    name    = "Nicholas",
+    name    = "Elizabeth",
     found   = false,
     empty;
 
 // Bad: Improper initialization alignment
 var count = 10,
-    name = "Nicholas",
+    name = "Elizabeth",
     found= false,
     empty;
 
 // Bad: Incorrect indentation
 var count    = 10,
-name    = "Nicholas",
+name    = "Elizabeth",
 found   = false,
 empty;
 
 // Bad: Multiple declarations on one line
-var count   = 10, name = "Nicholas",
+var count   = 10, name = "Elizabeth",
     found   = false, empty;
 
 // Bad: Uninitialized variables first
 var empty,
     count   = 10,
-    name    = "Nicholas",
+    name    = "Elizabeth",
     found   = false;
 
 // Bad: Multiple var statements
 var count   = 10,
-    name    = "Nicholas";
+    name    = "Elizabeth";
 
 var found   = false,
     empty;
@@ -507,7 +507,7 @@ Functions declared inside of other functions should be declared immediately afte
 function outer() {
 
 	var count   = 10,
-	    name    = "Nicholas",
+	    name    = "Elizabeth",
 	    found   = false,
 	    empty;
 
@@ -526,7 +526,7 @@ function outer() {
 	}
 
 	var count    = 10,
-	    name     = "Nicholas",
+	    name     = "Elizabeth",
 	    found    = false,
 	    empty;
 
@@ -626,7 +626,7 @@ function do_something() {
 }
 ```
 
-Constructor functions—functions used with the `new` operator to create new objects— should be formatted in camel case but must begin with an uppercase letter. Constructor function names should begin with a nonverb, because `new` is the action of creating an object instance.
+Constructor functions---functions used with the `new` operator to create new objects---should be formatted in camel case but must begin with an uppercase letter. Constructor function names should begin with a nonverb, because `new` is the action of creating an object instance.
 
 ```javascript
 // Good
@@ -650,7 +650,7 @@ function getMyObject() {
 }
 ```
 
-Variables that act as constants (values that won’t be changed) should be formatted using all uppercase letters with words separated by a single underscore.
+Variables that act as constants (values that won't be changed) should be formatted using all uppercase letters with words separated by a single underscore.
 
 ```javascript
 // Good
@@ -817,7 +817,7 @@ if (condition) {
 }
 
 // Bad: Improper spacing
-if(condition){
+if(condition) {
 	doSomething();
 }
 
@@ -924,11 +924,11 @@ switch (value) {
 		return true;
 
 	default:
-		throw new Error("This shouldn't happen.);
+		throw new Error("This shouldn't happen.");
 }
 ```
 
-If a `switch` doesn’t have a `default` case, then it should be indicated with a comment.
+If a `switch` doesn't have a `default` case, then it should be indicated with a comment.
 
 ```javascript
 // Good
@@ -989,4 +989,4 @@ Blank spaces should be used in the following circumstances:
 
 * Never use the primitive wrapper types, such as `String`, to create new objects.
 * Never use `eval()`.
-* Never use the `with` statement. This statement isn’t available in strict mode and likely won’t be available in future ECMAScript editions.
+* Never use the `with` statement. This statement isn't available in strict mode and likely won't be available in future ECMAScript editions.
