@@ -1,5 +1,7 @@
 # JavaScript Style Guide
 
+0
+
 ## Indentation
 
 Each indentation level is made up of one tab. Do not use spaces.
