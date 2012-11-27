@@ -535,10 +535,10 @@ Functions declared inside of other functions should be declared immediately afte
 // Good
 function outer() {
 
-	var count   = 10,
-	    name    = "Elizabeth",
-	    found   = false,
-	    empty;
+	var count = 10;
+	var name = "Elizabeth";
+	var found = false;
+	var empty;
 
 	function inner() {
 		// code
@@ -554,12 +554,12 @@ function outer() {
 		// code
 	}
 
-	var count    = 10,
-	    name     = "Elizabeth",
-	    found    = false,
-	    empty;
+	var count = 10;
+	var name = "Elizabeth";
+	var found = false;
+	var empty;
 
-		// code that uses inner()
+	// code that uses inner()
 }
 ```
 
@@ -891,8 +891,8 @@ Variables should not be declared in the initialization section of a `for` statem
 
 ```javascript
 // Good
-var i,
-    len;
+var i;
+var len;
 
 for (i = 0, len = 10; i < len; i++) {
 	// code
