@@ -615,6 +615,8 @@ var value = (function() {
 
 Care should be taken to name variables and functions properly. Names should be limited to alphanumeric characters and, in some cases, the underscore character. Do not use the dollar sign (`$`) or backslash (`\`) characters in any names.
 
+> Should jQuery variables start with a dollar sign?
+
 Variable names should be formatted in camel case with the first letter lowercase and the first letter of each subsequent word uppercase. The first word of a variable name should be a noun (not a verb) to avoid confusion with functions. Do not use underscores in variable names.
 
 ```javascript
