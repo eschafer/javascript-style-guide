@@ -20,14 +20,14 @@
 * [Ternary Operator](#ternary-operator)
 * [Statements](#statements)
     * [Simple Statements](#simple-statements)
-    * [return Statement](#return-statement)
+    * [`return` Statement](#return-statement)
     * [Compound Statements](#compound-statements)
-    * [if Statement](#if-statement)
-    * [for Statement](#for-statement)
-    * [while Statement](#while-statement)
-    * [do Statement](#do-statement)
-    * [switch Statement](#switch-statement)
-    * [try Statement](#try-statement)
+    * [`if` Statement](#if-statement)
+    * [`for` Statement](#for-statement)
+    * [`while` Statement](#while-statement)
+    * [`do` Statement](#do-statement)
+    * [`switch` Statement](#switch-statement)
+    * [`try` Statement](#try-statement)
 * [White Space](#white-space)
 * [Things to Avoid](#things-to-avoid)
 
@@ -793,7 +793,7 @@ a = b;
 count++; a = b;
 ```
 
-### <a name="return-statement">return Statement</a>
+### <a name="return-statement">`return` Statement</a>
 
 A `return` statement with a value should not use parentheses unless they make the return value more obvious in some way. Example:
 
@@ -813,7 +813,7 @@ Compound statements are lists of statements enclosed inside of braces.
 * Braces are used around all statements, even single statements, when they are part of a control structure, such as an `if` or `for` statement. This convention makes it easier to add statements without accidentally introducing bugs by forgetting to add braces.
 * The statement beginning keyword, such as `if`, should be followed by one space, and the opening brace should be preceded by a space.
 
-### <a name="if-statement">if Statement</a>
+### <a name="if-statement">`if` Statement</a>
 
 The `if` class of statements should have the following form:
 
@@ -861,7 +861,7 @@ if (condition) { doSomething(); }
 if (condition) doSomething();
 ```
 
-### <a name="for-statement">for Statement</a>
+### <a name="for-statement">`for` Statement</a>
 
 The `for` class of statements should have the following form:
 
@@ -899,7 +899,7 @@ for (var prop in object) {
 
 When using a `for-in` statement, double-check if you need to use `hasOwnProperty()` to filter out object members.
 
-### <a name="while-statement">while Statement</a>
+### <a name="while-statement">`while` Statement</a>
 
 The `while` class of statements should have the following form:
 
@@ -909,7 +909,7 @@ while (condition) {
 }
 ```
 
-### <a name="do-statement">do Statement</a>
+### <a name="do-statement">`do` Statement</a>
 
 The `do` class of statements should have the following form:
 
@@ -921,7 +921,7 @@ do {
 
 Note the use of a semicolon as the final part of this statement. There should be a space before and after the `while` keyword.
 
-### <a name="switch-statement">switch Statement</a>
+### <a name="switch-statement">`switch` Statement</a>
 
 The `switch` class of statements should have the following form:
 
@@ -976,7 +976,7 @@ switch (value) {
 }
 ```
 
-### <a name="try-statement">try Statement</a>
+### <a name="try-statement">`try` Statement</a>
 
 The `try` class of statements should have the following form:
 
