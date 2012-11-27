@@ -1,5 +1,12 @@
 # JavaScript Style Guide
 
+## TODO
+* Type Checking: http://docs.jquery.com/JQuery_Core_Style_Guidelines#Type_Checks
+* Conditional Evaluation: https://github.com/rwldrn/idiomatic.js/#cond
+* `this`: https://github.com/rwldrn/idiomatic.js/#naming (see B. Faces of `this`)
+* Early returns: https://github.com/rwldrn/idiomatic.js/#misc (see B. Early returns...)
+* JSHint: http://www.jshint.com/
+
 ## Contents
 * [Indentation](#indentation)
 * [Line Length](#line-length)*
@@ -529,7 +536,7 @@ function doSomething(arg1, arg2)
 var doSomething = new Function("arg1", "arg2", "return arg1 + arg2");
 ```
 
-Functions declared inside of other functions should be declared immediately after the `var` statement.
+Functions declared inside of other functions should be declared immediately after the `var` statements.
 
 ```javascript
 // Good
