@@ -1,10 +1,11 @@
 # JavaScript Style Guide
 
+## Contents
 * [Indentation](#indentation)
 * [Line Length](#line-length)
 * [Primitive Literals](#primitive-literals)
 * [Operator Spacing](#operator-spacing)
-* [Parentheses Spacing](#parenthesis-spacing)
+* [Parentheses Spacing](#parentheses-spacing)
 * [Object Literals](#object-literals)
 * [Comments](#comments)
     * [Single-Line Comments](#single-line-comments)
