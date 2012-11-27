@@ -16,8 +16,8 @@
 * [Object Literals](#object-literals)
 * [Comments](#comments)
     * [Single-Line Comments](#single-line-comments)
-    * [Multiline Comments](#multiline-comments)**
-    * [Comment Annotations](#comment-annotations)**
+    * [Multiline Comments](#multiline-comments)
+    * [Comment Annotations](#comment-annotations)
 * [Variable Declarations](#variable-declarations)
 * [Function Declarations](#function-declarations)
 * [Naming](#naming)*
@@ -392,8 +392,8 @@ if (condition) {
 	allowed();
 }
 
-// Bad: Don't use multi-line comments for trailing comments
-var result = something + somethingElse; /*somethingElse will never be null*/
+// Bad: Don't use end-of-line comments
+var result = something + somethingElse; /* somethingElse will never be null */
 ```
 
 ### <a name="comment-annotations">Comment Annotations</a>
