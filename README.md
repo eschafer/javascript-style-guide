@@ -1,8 +1,36 @@
 # JavaScript Style Guide
 
-0
+* [Indentation](#indentation)
+* [Line Length](#line-length)
+* [Primitive Literals](#primitive-literals)
+* [Operator Spacing](#operator-spacing)
+* [Parentheses Spacing](#parenthesis-spacing)
+* [Object Literals](#object-literals)
+* [Comments](#comments)
+    * [Single-Line Comments](#single-line-comments)
+    * [Multiline Comments](#multiline-comments)
+    * [Comment Annotations](#comment-annotations)
+* [Variable Declarations](#variable-declarations)
+* [Function Declarations](#function-declarations)
+* [Naming](#naming)
+* [Strict Mode](#strict-mode)
+* [Assignments](#assignments)
+* [Equality Operators](#equality-operators)
+* [Ternary Operator](#ternary-operator)
+* [Statements](#statements)
+    * [Simple Statements](#simple-statements)
+    * [return Statement](#return-statement)
+    * [Compound Statements](#compound-statements)
+    * [if Statement](#if-statement)
+    * [for Statement](#for-statement)
+    * [while Statement](#while-statement)
+    * [do Statement](#do-statement)
+    * [switch Statement](#switch-statement)
+    * [try Statement](#try-statement)
+* [White Space](#white-space)
+* [Things to Avoid](#things-to-avoid)
 
-## Indentation
+## <a name="indentation">Indentation</a>
 
 Each indentation level is made up of one tab. Do not use spaces.
 
@@ -13,7 +41,7 @@ if (true) {
 }
 ```
 
-## Line Length
+## <a name="line-length">Line Length</a>
 
 Each line should be no longer than 80 characters. If a line goes longer than 80 characters, it should be wrapped after an operator (comma, plus, etc.). The following line should be indented two levels.
 
@@ -31,7 +59,7 @@ doSomething(argument1, argument2, argument3, argument4, argument5, argument6
 		, argument7);
 ```
 
-## Primitive Literals
+## <a name="primitive-literals">Primitive Literals</a>
 
 Strings should always use double quotes (never single quotes) and should always appear on a single line. Never use a slash to create a new line in a string.
 
@@ -129,7 +157,7 @@ if (variable === undefined) {
 }
 ```
 
-## Operator Spacing
+## <a name="operator-spacing">Operator Spacing</a>
 
 Operators with two operands must be preceded and followed by a single space to make the expression clear. Operators include assignments and logical operators.
 
@@ -161,7 +189,7 @@ for (i=0; i<count; i++) {
 }
 ```
 
-## Parentheses Spacing
+## <a name="parentheses-spacing">Parentheses Spacing</a>
 
 When parentheses are used, there should be no white space immediately after the opening paren or immediately before the closing paren.
 
@@ -193,7 +221,7 @@ for (i = 0; i < count; i++) {
 }
 ```
 
-## Object Literals
+## <a name="object-literals">Object Literals</a>
 
 Object literals should have the following format:
 * The opening brace should be on the same line as the containing statement.
@@ -250,7 +278,7 @@ doSomething({
 doSomething({ key1: value1, key2: value2 });
 ```
 
-## Comments
+## <a name="comments">Comments</a>
 
 Make frequent use of comments to aid others in understanding your code. Use comments when:
 * Code is difficult to understand.
@@ -258,7 +286,7 @@ Make frequent use of comments to aid others in understanding your code. Use comm
 * Browser-specific code is necessary but not obvious.
 * Documentation generation is necessary for an object, method, or property (use appropriate documentation comments).
 
-### Single-Line Comments
+### <a name="single-line-comments">Single-Line Comments</a>
 
 Single-line comments should be used to documentation one line of code or a group of related lines of code. A single-line comment may be used in three ways:
 * On a separate line, describing the code beneath it
@@ -319,7 +347,7 @@ The only acceptable time to have multiple single-line comments on successive lin
 // }
 ```
 
-### Multiline Comments
+### <a name="multiline-comments">Multiline Comments</a>
 
 Multiline comments should be used to document code that requires more explanation. Each multiline comment should have at least three lines:
 
@@ -372,7 +400,7 @@ if (condition) {
 var result = something + somethingElse; /*somethingElse will never be null*/
 ```
 
-### Comment Annotations
+### <a name="comment-annotations">Comment Annotations</a>
 
 Comments may be used to annotate pieces of code with additional information. These annotations take the form of a single word followed by a colon. The acceptable annotations are:
 
@@ -427,7 +455,7 @@ if (document.all) {
 }
 ```
 
-## Variable Declarations
+## <a name="variable-declarations">Variable Declarations</a>
 
 All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using a single `var` statement with one variable per line. All lines after the first should be indented one level so that the variable names line up. Variables should be initialized when declared if applicable, and the equals operator should be at a consistent indentation level. Initialized variables should come first followed by uninitialized variables.
 
@@ -470,7 +498,7 @@ var found   = false,
 
 Always declare variables. Implied globals should not be used.
 
-## Function Declarations
+## <a name="function-declarations">Function Declarations</a>
 
 Functions should be declared before they are used. When a function is not a method (that is, not attached to an object), it should be defined using the function declaration format (not function expression format or using the Function constructor). There should be no space between the function name and the opening parenthesis. There should be one space between the closing parenthesis and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parenthesis or before the closing parenthesis. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
 
@@ -582,7 +610,7 @@ var value = (function() {
 })();
 ```
 
-## Naming
+## <a name="naming">Naming</a>
 
 Care should be taken to name variables and functions properly. Names should be limited to alphanumeric characters and, in some cases, the underscore character. Do not use the dollar sign (`$`) or backslash (`\`) characters in any names.
 
@@ -676,7 +704,7 @@ var object = {
 };
 ```
 
-## Strict Mode
+## <a name="strict-mode">Strict Mode</a>
 
 Strict mode should be used only inside of functions, never globally.
 
@@ -713,7 +741,7 @@ If you want strict mode to apply to multiple functions without needing to write 
 }());
 ```
 
-## Assignments
+## <a name="assignments">Assignments</a>
 
 When assigning a value to a variable, use parentheses around a right-side expression that contains a comparison.
 
@@ -725,7 +753,7 @@ var flag = (i < count);
 var flag = i < count;
 ```
 
-## Equality Operators
+## <a name="equality-operators">Equality Operators</a>
 
 Use `===` and `!==` instead of `==` and `!=` to avoid type coercion errors.
 
@@ -737,7 +765,7 @@ var same = (a === b);
 var same = (a == b);
 ```
 
-## Ternary Operator
+## <a name="ternary-operator">Ternary Operator</a>
 
 The ternary operator should be used only for assigning values conditionally and never as a shortcut for an `if` statement.
 
@@ -749,9 +777,9 @@ var value = condition ? value1 : value2;
 condition ? doSomething() : doSomethingElse();
 ```
 
-## Statements
+## <a name="statements">Statements</a>
 
-### Simple Statements
+### <a name="simple-statements">Simple Statements</a>
 
 Each line should contain at most one statement. All simple statements should end with a semicolon (`;`).
 
@@ -764,7 +792,7 @@ a = b;
 count++; a = b;
 ```
 
-### return Statement
+### <a name="return-statement">return Statement</a>
 
 A `return` statement with a value should not use parentheses unless they make the return value more obvious in some way. Example:
 
@@ -776,7 +804,7 @@ return collection.size();
 return (size > 0 ? size : defaultSize);
 ```
 
-### Compound Statements
+### <a name="compound-statements">Compound Statements</a>
 
 Compound statements are lists of statements enclosed inside of braces.
 * The enclosed statements should be indented one more level than the compound statement.
@@ -784,7 +812,7 @@ Compound statements are lists of statements enclosed inside of braces.
 * Braces are used around all statements, even single statements, when they are part of a control structure, such as an `if` or `for` statement. This convention makes it easier to add statements without accidentally introducing bugs by forgetting to add braces.
 * The statement beginning keyword, such as `if`, should be followed by one space, and the opening brace should be preceded by a space.
 
-### if Statement
+### <a name="if-statement">if Statement</a>
 
 The `if` class of statements should have the following form:
 
@@ -832,7 +860,7 @@ if (condition) { doSomething(); }
 if (condition) doSomething();
 ```
 
-### for Statement
+### <a name="for-statement">for Statement</a>
 
 The `for` class of statements should have the following form:
 
@@ -870,7 +898,7 @@ for (var prop in object) {
 
 When using a `for-in` statement, double-check if you need to use `hasOwnProperty()` to filter out object members.
 
-### while Statement
+### <a name="while-statement">while Statement</a>
 
 The `while` class of statements should have the following form:
 
@@ -880,7 +908,7 @@ while (condition) {
 }
 ```
 
-### do Statement
+### <a name="do-statement">do Statement</a>
 
 The `do` class of statements should have the following form:
 
@@ -892,7 +920,7 @@ do {
 
 Note the use of a semicolon as the final part of this statement. There should be a space before and after the `while` keyword.
 
-### switch Statement
+### <a name="switch-statement">switch Statement</a>
 
 The `switch` class of statements should have the following form:
 
@@ -947,7 +975,7 @@ switch (value) {
 }
 ```
 
-### try Statement
+### <a name="try-statement">try Statement</a>
 
 The `try` class of statements should have the following form:
 
@@ -967,7 +995,7 @@ try {
 }
 ```
 
-## White Space
+## <a name="white-space">White Space</a>
 
 Blank lines improve readability by setting off sections of code that are logically related. Two blank lines should always be used in the following circumstances:
 * Between sections of a source file
@@ -985,7 +1013,7 @@ Blank spaces should be used in the following circumstances:
 * All binary operators except dot (`.`) should be separated from their operands by spaces. Blank spaces should never separate unary operators such as unary minus, increment (`++`), and decrement (`--`) from their operands.
 * The expressions in a `for` statement should be separated by blank spaces.
 
-## Things to Avoid
+## <a name="things-to-avoid">Things to Avoid</a>
 
 * Never use the primitive wrapper types, such as `String`, to create new objects.
 * Never use `eval()`.
