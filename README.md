@@ -2,18 +2,18 @@
 
 ## Contents
 * [Indentation](#indentation)
-* [Line Length](#line-length)
-* [Primitive Literals](#primitive-literals)
+* [Line Length](#line-length)*
+* [Primitive Literals](#primitive-literals)*
 * [Operator Spacing](#operator-spacing)
 * [Parentheses Spacing](#parentheses-spacing)
 * [Object Literals](#object-literals)
 * [Comments](#comments)
-    * [Single-Line Comments](#single-line-comments)
-    * [Multiline Comments](#multiline-comments)
-    * [Comment Annotations](#comment-annotations)
-* [Variable Declarations](#variable-declarations)
+    * [Single-Line Comments](#single-line-comments)**
+    * [Multiline Comments](#multiline-comments)**
+    * [Comment Annotations](#comment-annotations)**
+* [Variable Declarations](#variable-declarations)*
 * [Function Declarations](#function-declarations)
-* [Naming](#naming)
+* [Naming](#naming)**
 * [Strict Mode](#strict-mode)
 * [Assignments](#assignments)
 * [Equality Operators](#equality-operators)
@@ -23,13 +23,16 @@
     * [`return` Statement](#return-statement)
     * [Compound Statements](#compound-statements)
     * [`if` Statement](#if-statement)
-    * [`for` Statement](#for-statement)
+    * [`for` Statement](#for-statement)*
     * [`while` Statement](#while-statement)
     * [`do` Statement](#do-statement)
     * [`switch` Statement](#switch-statement)
     * [`try` Statement](#try-statement)
-* [White Space](#white-space)
-* [Things to Avoid](#things-to-avoid)
+* [White Space](#white-space)**
+* [Things to Avoid](#things-to-avoid)**
+
+\* Still need to make some changes.
+\** Haven't read over yet.
 
 ## <a name="indentation">Indentation</a>
 
