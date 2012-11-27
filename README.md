@@ -15,7 +15,7 @@
 * [Parentheses Spacing](#parentheses-spacing)
 * [Object Literals](#object-literals)
 * [Comments](#comments)
-    * [Single-Line Comments](#single-line-comments)**
+    * [Single-Line Comments](#single-line-comments)
     * [Multiline Comments](#multiline-comments)**
     * [Comment Annotations](#comment-annotations)**
 * [Variable Declarations](#variable-declarations)
@@ -303,12 +303,9 @@ Make frequent use of comments to aid others in understanding your code. Use comm
 
 ### <a name="single-line-comments">Single-Line Comments</a>
 
-Single-line comments should be used to documentation one line of code or a group of related lines of code. A single-line comment may be used in three ways:
-* On a separate line, describing the code beneath it
-* At the end of a line, describing the code before it
-* On multiple lines, to comment out sections of code
+Single-line comments should be used to document one line of code or a group of related lines of code. A single-line comment may be used on a separate line, describing the code beneath it.
 
-When on a separate line, a single-line comment should be at the same indentation level as the code it describes and be preceded by a single line. Never use multiple single-line comments on consecutive lines; use a multiline comment instead.
+A single-line comment should be at the same indentation level as the code it describes and be preceded by a single line. Never use multiple single-line comments on consecutive lines; use a multiline comment instead.  Do not use end-of-line comments.
 
 ```javascript
 // Good
@@ -337,29 +334,13 @@ if (condition) {
 // from several different functions and may change during the
 // lifetime of the session.
 if (condition) {
+
 	// if you made it here, then all security checks passed
 	allowed();
 }
-```
 
-For single-line comments at the end of a line, ensure that there is one space between the end of the code and the beginning of the comment:
-
-```javascript
-// Good
+// Bad: End-of-line comment
 var result = something + somethingElse; // somethingElse will never be null
-
-// Bad: Not enough space between code and comment
-var result = something + somethingElse;// somethingElse will never be null
-```
-
-The only acceptable time to have multiple single-line comments on successive lines is to comment out large sections of code. Multiline comments should not be used for this purpose.
-
-```javascript
-// Good
-// if (condition) {
-// 	doSomething();
-// 	thenDoSomethingElse();
-// }
 ```
 
 ### <a name="multiline-comments">Multiline Comments</a>
