@@ -943,7 +943,7 @@ Each group of statements (except the default) should end with `break`, `return`,
 // Good
 switch (value) {
 	case 1:
-		/* falls through */
+		// falls through
 
 	case 2:
 		doSomething();
@@ -963,7 +963,7 @@ If a `switch` doesn't have a `default` case, then it should be indicated with a 
 // Good
 switch (value) {
 	case 1:
-		/*falls through*/
+		// falls through
 
 	case 2:
 		doSomething();
