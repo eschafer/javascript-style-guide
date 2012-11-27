@@ -46,6 +46,8 @@ if (true) {
 
 Each line should be no longer than 80 characters. If a line goes longer than 80 characters, it should be wrapped after an operator (comma, plus, etc.). The following line should be indented two levels.
 
+> How important is this?
+
 ```javascript
 // Good
 doSomething(argument1, argument2, argument3, argument4, argument5, argument6,
@@ -146,6 +148,8 @@ function doSomething(arg1, arg2, arg3, arg4) {
 
 Never use the special value `undefined`. To see if a variable has been defined, use the `typeof` operator:
 
+> Why?
+
 ```javascript
 // Good
 if (typeof variable === "undefined") {
@@ -192,7 +196,7 @@ for (i=0; i<count; i++) {
 
 ## <a name="parentheses-spacing">Parentheses Spacing</a>
 
-When parentheses are used, there should be no white space immediately after the opening paren or immediately before the closing paren.
+When parentheses are used, there should be no white space immediately after the opening parenthesis or immediately before the closing parenthesis.
 
 ```javascript
 // Good
@@ -458,6 +462,8 @@ if (document.all) {
 
 ## <a name="variable-declarations">Variable Declarations</a>
 
+> I need to rewrite this section.
+
 All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using a single `var` statement with one variable per line. All lines after the first should be indented one level so that the variable names line up. Variables should be initialized when declared if applicable, and the equals operator should be at a consistent indentation level. Initialized variables should come first followed by uninitialized variables.
 
 ```javascript
@@ -501,7 +507,7 @@ Always declare variables. Implied globals should not be used.
 
 ## <a name="function-declarations">Function Declarations</a>
 
-Functions should be declared before they are used. When a function is not a method (that is, not attached to an object), it should be defined using the function declaration format (not function expression format or using the Function constructor). There should be no space between the function name and the opening parenthesis. There should be one space between the closing parenthesis and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parenthesis or before the closing parenthesis. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
+Functions should be declared before they are used. When a function is not a method (that is, not attached to an object), it should be defined using the function declaration format (not function expression format or using the `Function` constructor). There should be no space between the function name and the opening parenthesis. There should be one space between the closing parenthesis and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parenthesis or before the closing parenthesis. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
 
 ```javascript
 // Good
@@ -800,10 +806,13 @@ count++; a = b;
 A `return` statement with a value should not use parentheses unless they make the return value more obvious in some way. Example:
 
 ```javascript
+// Good
 return;
 
+// Good
 return collection.size();
 
+// Good
 return (size > 0 ? size : defaultSize);
 ```
 
@@ -820,22 +829,25 @@ Compound statements are lists of statements enclosed inside of braces.
 The `if` class of statements should have the following form:
 
 ```javascript
+// Good
 if (condition) {
-	statements
+	// statements
 }
 
+// Good
 if (condition) {
-	statements
+	// statements
 } else {
-	statements
+	// statements
 }
 
+// Good
 if (condition) {
-	statements
+	// statements
 } else if (condition) {
-	statements
+	// statements
 } else {
-	statements
+	// statements
 }
 ```
 
@@ -868,28 +880,32 @@ if (condition) doSomething();
 The `for` class of statements should have the following form:
 
 ```javascript
+// Good
 for (initialization; condition; update) {
-	statements
+	// statements
 }
 
+// Good
 for (variable in object) {
-	statements
+	// statements
 }
 ```
 
 Variables should not be declared in the initialization section of a `for` statement.
+
+> Not sure I agree with this.
 
 ```javascript
 // Good
 var i,
     len;
 
-for (i=0, len=10; i < len; i++) {
+for (i = 0, len = 10; i < len; i++) {
 	// code
 }
 
 // Bad: Variables declared during initialization
-for (var i=0, len=10; i < len; i++) {
+for (var i = 0, len = 10; i < len; i++) {
 	// code
 }
 
@@ -906,8 +922,9 @@ When using a `for-in` statement, double-check if you need to use `hasOwnProperty
 The `while` class of statements should have the following form:
 
 ```javascript
+// Good
 while (condition) {
-	statements
+	// statements
 }
 ```
 
@@ -916,8 +933,9 @@ while (condition) {
 The `do` class of statements should have the following form:
 
 ```javascript
+// Good
 do {
-	statements
+	// statements
 } while (condition);
 ```
 
@@ -928,12 +946,13 @@ Note the use of a semicolon as the final part of this statement. There should be
 The `switch` class of statements should have the following form:
 
 ```javascript
+// Good
 switch (expression) {
 	case expression:
-		statements
+		// statements
 
 	default:
-		statements
+		// statements
 }
 ```
 
@@ -983,18 +1002,20 @@ switch (value) {
 The `try` class of statements should have the following form:
 
 ```javascript
+// Good
 try {
-	statements
+	// statements
 } catch (variable) {
-	statements
+	// statements
 }
 
+// Good
 try {
-	statements
+	// statements
 } catch (variable) {
-	statements
+	// statements
 } finally {
-	statements
+	// statements
 }
 ```
 
