@@ -39,7 +39,6 @@
 * [Things to Avoid](#things-to-avoid)
 
 \* Still need to make some changes.
-\** Haven't read over yet.
 
 ## <a name="indentation">Indentation</a>
 
