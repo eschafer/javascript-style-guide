@@ -13,7 +13,7 @@
     * [Comment Annotations](#comment-annotations)**
 * [Variable Declarations](#variable-declarations)*
 * [Function Declarations](#function-declarations)
-* [Naming](#naming)**
+* [Naming](#naming)*
 * [Strict Mode](#strict-mode)
 * [Assignments](#assignments)
 * [Equality Operators](#equality-operators)
@@ -28,8 +28,8 @@
     * [`do` Statement](#do-statement)
     * [`switch` Statement](#switch-statement)
     * [`try` Statement](#try-statement)
-* [White Space](#white-space)**
-* [Things to Avoid](#things-to-avoid)**
+* [White Space](#white-space)
+* [Things to Avoid](#things-to-avoid)
 
 \* Still need to make some changes.
 \** Haven't read over yet.
