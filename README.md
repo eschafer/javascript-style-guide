@@ -11,7 +11,7 @@
     * [Single-Line Comments](#single-line-comments)**
     * [Multiline Comments](#multiline-comments)**
     * [Comment Annotations](#comment-annotations)**
-* [Variable Declarations](#variable-declarations)*
+* [Variable Declarations](#variable-declarations)
 * [Function Declarations](#function-declarations)
 * [Naming](#naming)*
 * [Strict Mode](#strict-mode)
@@ -465,44 +465,35 @@ if (document.all) {
 
 ## <a name="variable-declarations">Variable Declarations</a>
 
-> I need to rewrite this section.
-
-All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using a single `var` statement with one variable per line. All lines after the first should be indented one level so that the variable names line up. Variables should be initialized when declared if applicable, and the equals operator should be at a consistent indentation level. Initialized variables should come first followed by uninitialized variables.
+All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using multiple `var` statements, with one variable per line. Variables should be initialized when declared if applicable. Initialized variables should come first followed by uninitialized variables. Do not align variable names, the equals operator, or values.
 
 ```javascript
 // Good
+var count = 10;
+var name = "Elizabeth";
+var found = false;
+var empty;
+
+// Bad: Improper initialization alignment
+var count   = 10;
+var name    = "Elizabeth";
+var found   = false;
+var empty;
+
+// Bad: Multiple declarations on one line
+var count = 10, name = "Elizabeth";
+var found = false, empty;
+
+// Bad: Uninitialized variables first
+var empty;
+var count = 10;
+var name = "Elizabeth";
+var found = false;
+
+// Bad: Single var statement
 var count   = 10,
     name    = "Elizabeth",
     found   = false,
-    empty;
-
-// Bad: Improper initialization alignment
-var count = 10,
-    name = "Elizabeth",
-    found= false,
-    empty;
-
-// Bad: Incorrect indentation
-var count    = 10,
-name    = "Elizabeth",
-found   = false,
-empty;
-
-// Bad: Multiple declarations on one line
-var count   = 10, name = "Elizabeth",
-    found   = false, empty;
-
-// Bad: Uninitialized variables first
-var empty,
-    count   = 10,
-    name    = "Elizabeth",
-    found   = false;
-
-// Bad: Multiple var statements
-var count   = 10,
-    name    = "Elizabeth";
-
-var found   = false,
     empty;
 ```
 
