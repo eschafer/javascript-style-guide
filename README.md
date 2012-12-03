@@ -1,16 +1,13 @@
 # JavaScript Style Guide
 
-## TODO
-* Type Checking: http://docs.jquery.com/JQuery_Core_Style_Guidelines#Type_Checks
-* Conditional Evaluation: https://github.com/rwldrn/idiomatic.js/#cond
-* `this`: https://github.com/rwldrn/idiomatic.js/#naming (see B. Faces of `this`)
-* Early returns: https://github.com/rwldrn/idiomatic.js/#misc (see B. Early returns...)
-* JSHint: http://www.jshint.com/
-
-## Contents
+## <a name="TOC">Contents</a>
 * [Indentation](#indentation)
-* [Line Length](#line-length)*
-* [Primitive Literals](#primitive-literals)*
+* [Line Length](#line-length)
+* [Types](#types)
+* [Primitive Literals](#primitive-literals)
+    * [Strings](#strings)
+    * [Numbers](#numbers)
+    * [`null`](#null)
 * [Operator Spacing](#operator-spacing)
 * [Parentheses Spacing](#parentheses-spacing)
 * [Object Literals](#object-literals)
@@ -20,7 +17,7 @@
     * [Comment Annotations](#comment-annotations)
 * [Variable Declarations](#variable-declarations)
 * [Function Declarations](#function-declarations)
-* [Naming](#naming)*
+* [Naming](#naming)
 * [Strict Mode](#strict-mode)
 * [Assignments](#assignments)
 * [Equality Operators](#equality-operators)
@@ -35,8 +32,13 @@
     * [`do` Statement](#do-statement)
     * [`switch` Statement](#switch-statement)
     * [`try` Statement](#try-statement)
+* [jQuery](#jquery)
+* [Type Checking](#type-checking)*
+* [`this`](#this)
+* [Early Returns](#early-returns)
 * [White Space](#white-space)
 * [Things to Avoid](#things-to-avoid)
+* [JSHint](#jshint)*
 
 \* Still need to make some changes.
 
@@ -51,11 +53,11 @@ if (true) {
 }
 ```
 
+**[[⬆]](#TOC)**
+
 ## <a name="line-length">Line Length</a>
 
-Each line should be no longer than 80 characters. If a line goes longer than 80 characters, it should be wrapped after an operator (comma, plus, etc.). The following line should be indented two levels.
-
-> How important is this?
+Each line should be no longer than 80 characters, but slightly longer lines are permitted for readability. If a line goes longer than 80 characters, it should be wrapped after an operator (comma, plus, etc.). The following line should be indented two levels.
 
 ```javascript
 // Good
@@ -71,9 +73,47 @@ doSomething(argument1, argument2, argument3, argument4, argument5, argument6
 		, argument7);
 ```
 
+**[[⬆]](#TOC)**
+
+## <a name="types">Types</a>
+
+* **Primitives**: When you access a primitive type you work directly on its value.
+    * `String`
+    * `Number`
+    * `Boolean`
+    * `null`
+    * `undefined`
+
+    ```javascript
+    var foo = 1;
+    var bar = foo;
+
+    bar = 9;
+
+    console.log(foo, bar); // => 1, 9
+    ```
+* **Complex**: When you access a complex type you work on a reference to its value.
+
+    * `Object`
+    * `Array`
+    * `Function`
+
+    ```javascript
+    var foo = [1, 2];
+    var bar = foo;
+
+    bar[0] = 9;
+
+    console.log(foo[0], bar[0]); // => 9, 9
+    ```
+
+**[[⬆]](#TOC)**
+
 ## <a name="primitive-literals">Primitive Literals</a>
 
-Strings should always use double quotes (never single quotes) and should always appear on a single line. Never use a slash to create a new line in a string.
+### <a name="strings">Strings</a>
+
+Strings should always use double quotes (never single quotes) and should always appear on a single line. Never use a slash to create a new line in a string - use string concatenation instead.
 
 ```javascript
 // Good
@@ -82,10 +122,16 @@ var name = "Elizabeth";
 // Bad: Single quotes
 var name = 'Elizabeth';
 
+// Good: String concatenation
+var longString = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, " +
+		"sed diam nonummy nibh euismod";
+
 // Bad: Wrapping to second line
 var longString = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, \
 sed diam nonummy nibh euismod";
 ```
+
+### <a name="numbers">Numbers</a>
 
 Numbers should be written as decimal integers, e-notation integers, hexadecimal integers, or floating-point decimals with at least one digit before and one digit after the decimal point. Never use octal literals.
 
@@ -112,6 +158,8 @@ var price = .1;
 // Bad: Octal (base 8) is deprecated
 var num = 010;
 ```
+
+### <a name="null">`null`</a>
 
 The special value `null` should be used only in the following situations:
 
@@ -155,21 +203,7 @@ function doSomething(arg1, arg2, arg3, arg4) {
 }
 ```
 
-Never use the special value `undefined`. To see if a variable has been defined, use the `typeof` operator:
-
-> Why?
-
-```javascript
-// Good
-if (typeof variable === "undefined") {
-	// do something
-}
-
-// Bad: Using undefined literal
-if (variable === undefined) {
-	// do something
-}
-```
+**[[⬆]](#TOC)**
 
 ## <a name="operator-spacing">Operator Spacing</a>
 
@@ -203,6 +237,8 @@ for (i=0; i<count; i++) {
 }
 ```
 
+**[[⬆]](#TOC)**
+
 ## <a name="parentheses-spacing">Parentheses Spacing</a>
 
 When parentheses are used, there should be no white space immediately after the opening parenthesis or immediately before the closing parenthesis.
@@ -234,6 +270,8 @@ for (i = 0; i < count; i++) {
 	process( i );
 }
 ```
+
+**[[⬆]](#TOC)**
 
 ## <a name="object-literals">Object Literals</a>
 
@@ -291,6 +329,8 @@ doSomething({
 // Bad: All on one line
 doSomething({ key1: value1, key2: value2 });
 ```
+
+**[[⬆]](#TOC)**
 
 ## <a name="comments">Comments</a>
 
@@ -450,6 +490,8 @@ if (document.all) {
 }
 ```
 
+**[[⬆]](#TOC)**
+
 ## <a name="variable-declarations">Variable Declarations</a>
 
 All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using multiple `var` statements, with one variable per line. Variables should be initialized when declared if applicable. Initialized variables should come first followed by uninitialized variables. Do not align variable names, the equals operator, or values.
@@ -485,6 +527,8 @@ var count   = 10,
 ```
 
 Always declare variables. Implied globals should not be used.
+
+**[[⬆]](#TOC)**
 
 ## <a name="function-declarations">Function Declarations</a>
 
@@ -598,11 +642,11 @@ var value = (function() {
 })();
 ```
 
+**[[⬆]](#TOC)**
+
 ## <a name="naming">Naming</a>
 
-Care should be taken to name variables and functions properly. Names should be limited to alphanumeric characters and, in some cases, the underscore character. Do not use the dollar sign (`$`) or backslash (`\`) characters in any names.
-
-> Should jQuery variables start with a dollar sign?
+Care should be taken to name variables and functions properly. Names should be limited to alphanumeric characters and, in some cases, the underscore character. Do not use the dollar sign (`$`) or backslash (`\`) characters in any other names (with the exception of [jQuery object variables](#jquery));
 
 Variable names should be formatted in camel case with the first letter lowercase and the first letter of each subsequent word uppercase. The first word of a variable name should be a noun (not a verb) to avoid confusion with functions. Do not use underscores in variable names.
 
@@ -694,6 +738,8 @@ var object = {
 };
 ```
 
+**[[⬆]](#TOC)**
+
 ## <a name="strict-mode">Strict Mode</a>
 
 Strict mode should be used only inside of functions, never globally.
@@ -731,6 +777,8 @@ If you want strict mode to apply to multiple functions without needing to write 
 }());
 ```
 
+**[[⬆]](#TOC)**
+
 ## <a name="assignments">Assignments</a>
 
 When assigning a value to a variable, use parentheses around a right-side expression that contains a comparison.
@@ -742,6 +790,8 @@ var flag = (i < count);
 // Bad: Missing parentheses
 var flag = i < count;
 ```
+
+**[[⬆]](#TOC)**
 
 ## <a name="equality-operators">Equality Operators</a>
 
@@ -755,6 +805,8 @@ var same = (a === b);
 var same = (a == b);
 ```
 
+**[[⬆]](#TOC)**
+
 ## <a name="ternary-operator">Ternary Operator</a>
 
 The ternary operator should be used only for assigning values conditionally and never as a shortcut for an `if` statement.
@@ -766,6 +818,8 @@ var value = condition ? value1 : value2;
 // Bad: no assignment, should be an if statement
 condition ? doSomething() : doSomethingElse();
 ```
+
+**[[⬆]](#TOC)**
 
 ## <a name="statements">Statements</a>
 
@@ -1000,6 +1054,8 @@ try {
 }
 ```
 
+**[[⬆]](#TOC)**
+
 ## <a name="white-space">White Space</a>
 
 Blank lines improve readability by setting off sections of code that are logically related. Two blank lines should always be used in the following circumstances:
@@ -1018,8 +1074,189 @@ Blank spaces should be used in the following circumstances:
 * All binary operators except dot (`.`) should be separated from their operands by spaces. Blank spaces should never separate unary operators such as unary minus, increment (`++`), and decrement (`--`) from their operands.
 * The expressions in a `for` statement should be separated by blank spaces.
 
+**[[⬆]](#TOC)**
+
+## <a name='jquery'>jQuery</a>
+
+* Prefix jQuery object variables with a `$`.
+
+    ```javascript
+    // bad
+    var sidebar = $('.sidebar');
+
+    // good
+    var $sidebar = $('.sidebar');
+    ```
+
+* Cache jQuery lookups.
+
+    ```javascript
+    // bad
+    function setSidebar() {
+      $('.sidebar').hide();
+
+      // ...stuff...
+
+      $('.sidebar').css({
+        'background-color': 'pink'
+      });
+    }
+
+    // good
+    function setSidebar() {
+      var $sidebar = $('.sidebar');
+      $sidebar.hide();
+
+      // ...stuff...
+
+      $sidebar.css({
+        'background-color': 'pink'
+      });
+    }
+    ```
+
+**[[⬆]](#TOC)**
+
+## <a name="type-checking">Type Checking</a>
+
+* String: `typeof object === "string"`
+* Number: `typeof object === "number"`
+* Boolean: `typeof object === "boolean"`
+* Object: `typeof object === "object"`
+* Plain Object: `jQuery.isPlainObject(object)`
+* Function: `jQuery.isFunction(object)`
+* Array: `jQuery.isArray(object)`
+* Element: `object.nodeType`
+* `null`: `object === null`
+* `null` or `undefined`: `object == null`
+* `undefined`:
+    * Global Variables: `typeof variable === "undefined"`
+    * Local Variables: `variable === undefined`
+    * Properties: `object.prop === undefined`
+
+**[[⬆]](#TOC)**
+
+## <a name='this'>`this`</a>
+
+Beyond the generally well known use cases of `call` and `apply`, always prefer `.bind( this )` or a functional equivalent, for creating `BoundFunction` definitions for later invocation. Only resort to aliasing when no preferable option is available.
+
+```javascript
+function Device(opts) {
+	this.value = null;
+
+	// open an async stream,
+	// this will be called continuously
+	stream.read(opts.path, function(data) {
+
+		// Update this instance's current value
+		// with the most recent value from the
+		// data stream
+		this.value = data;
+	}.bind(this));
+
+	// Throttle the frequency of events emitted from
+	// this Device instance
+	setInterval(function() {
+
+		// Emit a throttled event
+		this.emit("event");
+	}.bind(this), opts.freq || 100);
+}
+
+// Just pretend we've inherited EventEmitter ;)
+```
+
+When unavailable, functional equivalents to `.bind` exist in many modern JavaScript libraries.
+
+```javascript
+
+// eg. lodash/underscore, _.bind()
+function Device(opts) {
+	this.value = null;
+	
+	stream.read(opts.path, _.bind(function(data) {
+		this.value = data;
+	}, this));
+
+	setInterval(_.bind(function() {
+		this.emit("event");
+	}, this), opts.freq || 100);
+}
+
+// eg. jQuery.proxy
+function Device(opts) {
+	this.value = null;
+	
+	stream.read(opts.path, jQuery.proxy(function(data) {
+		this.value = data;
+	}, this));
+	
+	setInterval(jQuery.proxy(function() {
+		this.emit("event");
+	}, this), opts.freq || 100);
+}
+```
+
+As a last resort, create an alias to `this` using `that` as an identifier. This is extremely bug prone and should be avoided whenever possible.
+
+```javascript
+function Device(opts) {
+	var that = this;
+	this.value = null;
+	
+	stream.read(opts.path, function(data) {
+		that.value = data;
+	});
+
+	setInterval(function() {
+		that.emit("event");
+	}, opts.freq || 100);
+}
+```
+
+**[[⬆]](#TOC)**
+
+## <a name='early-returns'>Early Returns</a>
+
+Early returns promote code readability with negligible performance difference
+
+```javascript
+// Bad:
+function returnLate(foo) {
+	var ret;
+
+	if (foo) {
+		ret = "foo";
+	} else {
+		ret = "quux";
+	}
+
+	return ret;
+}
+
+// Good:
+function returnEarly(foo) {
+
+	if ( foo ) {
+		return "foo";
+	}
+
+	return "quux";
+}
+```
+
+**[[⬆]](#TOC)**
+
+## <a name='jshint'>JSHint</a>
+
+http://jshint.com/
+
+**[[⬆]](#TOC)**
+
 ## <a name="things-to-avoid">Things to Avoid</a>
 
 * Never use the primitive wrapper types, such as `String`, to create new objects.
 * Never use `eval()`.
 * Never use the `with` statement. This statement isn't available in strict mode and likely won't be available in future ECMAScript editions.
+
+**[[⬆]](#TOC)**
