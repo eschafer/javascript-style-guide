@@ -14,7 +14,6 @@
 * [Comments](#comments)
     * [Single-Line Comments](#single-line-comments)
     * [Multiline Comments](#multiline-comments)
-    * [Comment Annotations](#comment-annotations)
 * [Variable Declarations](#variable-declarations)
 * [Function Declarations](#function-declarations)
 * [Naming](#naming)
@@ -436,63 +435,6 @@ if (condition) {
 // Bad: Don't use end-of-line comments
 var result = something + somethingElse; /* somethingElse will never be null */
 ```
-
-### <a name="comment-annotations">Comment Annotations</a>
-
-Comments may be used to annotate pieces of code with additional information. These annotations take the form of a single word followed by a colon. The acceptable annotations are:
-
-`TODO`
-Indicates that the code is not yet complete. Information about the next steps should be included.
-
-`HACK`
-Indicates that the code is using a shortcut. Information about why the hack is being used should be included. This may also indicate that it would be nice to come up with a better way to solve the problem.
-
-`XXX`
-Indicates that the code is problematic and should be fixed as soon as possible.
-
-`FIXME`
-Indicates that the code is problematic and should be fixed soon. Less important than `XXX`.
-
-`REVIEW`
-Indicates that the code needs to be reviewed for potential changes.
-
-These annotations may be used with either single-line or multiline comments and should follow the same formatting rules as the general comment type.
-
-Examples:
-
-```javascript
-// Good
-// TODO: I'd like to find a way to make this faster
-doSomething();
-
-// Good
-/*
- * HACK: Have to do this for IE. I plan on revisiting in
- * the future when I have more time. This probably should
- * get replaced before v1.2.
- */
-if (document.all) {
-	doSomething();
-}
-
-// Good
-// REVIEW: Is there a better way to do this?
-if (document.all) {
-	doSomething();
-}
-
-// Bad: Annotation spacing is incorrect
-// TODO : I'd like to find a way to make this faster
-doSomething();
-
-// Bad: Comment should be at the same indentation as code
-	// REVIEW: Is there a better way to do this?
-if (document.all) {
-	doSomething();
-}
-```
-
-**[[⬆]](#TOC)**
 
 ## <a name="variable-declarations">Variable Declarations</a>
 
