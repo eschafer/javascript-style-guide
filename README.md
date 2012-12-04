@@ -1,5 +1,10 @@
 # JavaScript Style Guide
 
+## Sources
+* Maintainable JavaScript by Nicholas Zakas (O’Reilly). Copyright 2012 Nicholas Zakas, 978-1-449-32768-2.
+* https://github.com/rwldrn/idiomatic.js
+* http://docs.jquery.com/JQuery_Core_Style_Guidelines
+
 ## <a name="TOC">Contents</a>
 * [Indentation](#indentation)
 * [Line Length](#line-length)
