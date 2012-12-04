@@ -1087,15 +1087,15 @@ Blank spaces should be used in the following circumstances:
 
 ## <a name='this'>`this`</a>
 
-Beyond the generally well known use cases of `call` and `apply`, always prefer `.bind( this )` or a functional equivalent, for creating `BoundFunction` definitions for later invocation. Only resort to aliasing when no preferable option is available.
+Beyond the generally well known use cases of `call` and `apply`, always prefer `.bind(this)` or a functional equivalent, for creating `BoundFunction` definitions for later invocation. Only resort to aliasing when no preferable option is available.
 
 ```javascript
-function Device(opts) {
+function Device(options) {
 	this.value = null;
 
 	// open an async stream,
 	// this will be called continuously
-	stream.read(opts.path, function(data) {
+	stream.read(options.path, function(data) {
 
 		// Update this instance's current value
 		// with the most recent value from the
@@ -1109,7 +1109,7 @@ function Device(opts) {
 
 		// Emit a throttled event
 		this.emit("event");
-	}.bind(this), opts.freq || 100);
+	}.bind(this), options.frequency || 100);
 }
 
 // Just pretend we've inherited EventEmitter ;)
@@ -1120,46 +1120,46 @@ When unavailable, functional equivalents to `.bind` exist in many modern JavaScr
 ```javascript
 
 // eg. lodash/underscore, _.bind()
-function Device(opts) {
+function Device(options) {
 	this.value = null;
 	
-	stream.read(opts.path, _.bind(function(data) {
+	stream.read(options.path, _.bind(function(data) {
 		this.value = data;
 	}, this));
 
 	setInterval(_.bind(function() {
 		this.emit("event");
-	}, this), opts.freq || 100);
+	}, this), options.frequency || 100);
 }
 
 // eg. jQuery.proxy
-function Device(opts) {
+function Device(options) {
 	this.value = null;
 	
-	stream.read(opts.path, jQuery.proxy(function(data) {
+	stream.read(options.path, jQuery.proxy(function(data) {
 		this.value = data;
 	}, this));
 	
 	setInterval(jQuery.proxy(function() {
 		this.emit("event");
-	}, this), opts.freq || 100);
+	}, this), options.frequency || 100);
 }
 ```
 
 As a last resort, create an alias to `this` using `that` as an identifier. This is extremely bug prone and should be avoided whenever possible.
 
 ```javascript
-function Device(opts) {
+function Device(options) {
 	var that = this;
 	this.value = null;
 	
-	stream.read(opts.path, function(data) {
+	stream.read(options.path, function(data) {
 		that.value = data;
 	});
 
 	setInterval(function() {
 		that.emit("event");
-	}, opts.freq || 100);
+	}, options.frequency || 100);
 }
 ```
 
@@ -1167,26 +1167,26 @@ function Device(opts) {
 
 ## <a name='early-returns'>Early Returns</a>
 
-Early returns promote code readability with negligible performance difference
+Early returns promote code readability with negligible performance difference.
 
 ```javascript
 // Bad:
 function returnLate(foo) {
-	var ret;
+	var value;
 
 	if (foo) {
-		ret = "foo";
+		value = "foo";
 	} else {
-		ret = "quux";
+		value = "quux";
 	}
 
-	return ret;
+	return value;
 }
 
 // Good:
 function returnEarly(foo) {
 
-	if ( foo ) {
+	if (foo) {
 		return "foo";
 	}
 
