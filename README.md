@@ -46,6 +46,8 @@
 
 Each indentation level is made up of one tab. Do not use spaces.
 
+If alignment is necessary (which shouldn't be common), use tabs for indentation and spaces for alignment.
+
 ```javascript
 // Good
 if (true) {
