@@ -1,6 +1,6 @@
 # JavaScript Style Guide
 
-1
+12
 
 ## Sources
 * Maintainable JavaScript by Nicholas Zakas (O’Reilly). Copyright 2012 Nicholas Zakas, 978-1-449-32768-2.
