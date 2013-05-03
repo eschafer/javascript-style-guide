@@ -1026,16 +1026,16 @@ Blank spaces should be used in the following circumstances:
 
 **[[⬆]](#TOC)**
 
-## <a name='jquery'>jQuery</a>
+## <a name="jquery">jQuery</a>
 
 * Prefix jQuery object variables with a `$`.
 
     ```javascript
     // bad
-    var sidebar = $('.sidebar');
+    var sidebar = $(".sidebar");
 
     // good
-    var $sidebar = $('.sidebar');
+    var $sidebar = $(".sidebar");
     ```
 
 * Cache jQuery lookups.
@@ -1043,24 +1043,24 @@ Blank spaces should be used in the following circumstances:
     ```javascript
     // bad
     function setSidebar() {
-      $('.sidebar').hide();
+      $(".sidebar").hide();
 
       // ...stuff...
 
-      $('.sidebar').css({
-        'background-color': 'pink'
+      $(".sidebar").css({
+        "background-color": "pink"
       });
     }
 
     // good
     function setSidebar() {
-      var $sidebar = $('.sidebar');
+      var $sidebar = $(".sidebar");
       $sidebar.hide();
 
       // ...stuff...
 
       $sidebar.css({
-        'background-color': 'pink'
+        "background-color": "pink"
       });
     }
     ```
@@ -1086,7 +1086,7 @@ Blank spaces should be used in the following circumstances:
 
 **[[⬆]](#TOC)**
 
-## <a name='this'>`this`</a>
+## <a name="this">`this`</a>
 
 Beyond the generally well known use cases of `call` and `apply`, always prefer `.bind(this)` or a functional equivalent, for creating `BoundFunction` definitions for later invocation. Only resort to aliasing when no preferable option is available.
 
@@ -1166,7 +1166,7 @@ function Device(options) {
 
 **[[⬆]](#TOC)**
 
-## <a name='early-returns'>Early Returns</a>
+## <a name="early-returns">Early Returns</a>
 
 Early returns promote code readability with negligible performance difference.
 
@@ -1197,7 +1197,7 @@ function returnEarly(foo) {
 
 **[[⬆]](#TOC)**
 
-## <a name='jshint'>JSHint</a>
+## <a name="jshint">JSHint</a>
 
 http://jshint.com/
 
