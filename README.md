@@ -682,7 +682,7 @@ Object properties follow the same naming conventions as variables. Object method
 var object = {
 	_count: 10,
 
-	_getCount: function () {
+	_getCount: function() {
 		return this._count;
 	}
 };
