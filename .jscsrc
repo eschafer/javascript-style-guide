@@ -1,0 +1,90 @@
+{
+	"disallowEmptyBlocks": true,
+	"disallowImplicitTypeConversion": true,
+	"disallowKeywordsOnNewLine": ["else"],
+	"disallowKeywords": ["with"],
+	"disallowMixedSpacesAndTabs": "smart",
+	"disallowMultipleLineStrings": true,
+	"disallowMultipleVarDecl": true,
+	"disallowNewlineBeforeBlockStatements": true,
+	"disallowQuotedKeysInObjects": "allButReserved",
+	"disallowSpaceAfterObjectKeys": true,
+	"disallowSpaceAfterPrefixUnaryOperators": true,
+	"disallowSpaceBeforePostfixUnaryOperators": true,
+	"disallowSpacesInAnonymousFunctionExpression": {
+		"beforeOpeningRoundBrace": true
+	},
+	"disallowSpacesInCallExpression": true,
+	"disallowSpacesInFunctionDeclaration": {
+		"beforeOpeningRoundBrace": true
+	},
+	"disallowSpacesInFunctionExpression": {
+		"beforeOpeningRoundBrace": true
+	},
+	"disallowSpacesInFunction": {
+		"beforeOpeningRoundBrace": true,
+	},
+	"disallowSpacesInNamedFunctionExpression": {
+		"beforeOpeningRoundBrace": true
+	},
+	"disallowSpacesInsideArrayBrackets": true,
+	"disallowSpacesInsideBrackets": true,
+	"disallowSpacesInsideObjectBrackets": true,
+	"disallowSpacesInsideParentheses": true,
+	"disallowTrailingComma": true,
+	"disallowTrailingWhitespace": true,
+	"disallowYodaConditions": true,
+
+	"maximumLineLength": 80,
+
+	"requireAnonymousFunctions": true,
+	"requireBlocksOnNewline": true,
+	"requireCamelCaseOrUpperCaseIdentifiers": true,
+	"requireCapitalizedConstructors": true,
+	"requireCommaBeforeLineBreak": true,
+	"requireCurlyBraces": true,
+	"requireDotNotation": true,
+	"requireFunctionDeclarations": true,
+	"requireLineBreakAfterVariableAssignment": true,
+	"requireLineFeedAtFileEnd": true,
+	"requireOperatorBeforeLineBreak": true,
+	"requirePaddingNewLinesInObjects": true,
+	"requireParenthesesAroundIIFE": true,
+	"requireSpaceAfterBinaryOperators": true,
+	"requireSpaceAfterKeywords": true,
+	"requireSpaceAfterLineComment": true,
+	"requireSpaceBeforeBinaryOperators": true,
+	"requireSpaceBeforeBlockStatements": true,
+	"requireSpaceBeforeKeywords": true,
+	"requireSpaceBeforeObjectValues": true,
+	"requireSpaceBetweenArguments": true,
+	"requireSpacesInAnonymousFunctionExpression": {
+			"beforeOpeningCurlyBrace": true
+	},
+	"requireSpacesInConditionalExpression": {
+		"afterTest": true,
+		"beforeConsequent": true,
+		"afterConsequent": true,
+		"beforeAlternate": true
+	},
+	"requireSpacesInForStatement": true,
+	"requireSpacesInFunctionDeclaration": {
+			"beforeOpeningCurlyBrace": true
+	},
+	"requireSpacesInFunctionExpression": {
+			"beforeOpeningCurlyBrace": true
+	},
+	"requireSpacesInFunction": {
+			"beforeOpeningCurlyBrace": true
+	},
+	"requireSpacesInNamedFunctionExpression": {
+			"beforeOpeningCurlyBrace": true
+	},
+
+	"safeContextKeyword": ["that"],
+
+	"validateIndentation": "\t",
+	"validateLineBreaks": "LF",
+	"validateParameterSeparator": ", ",
+	"validateQuoteMarks": "\""
+}
