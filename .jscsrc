@@ -41,7 +41,7 @@
 	"requireCamelCaseOrUpperCaseIdentifiers": true,
 	"requireCapitalizedConstructors": true,
 	"requireCommaBeforeLineBreak": true,
-	"requireCurlyBraces": true,
+	"requireCurlyBraces": ["if", "else", "for", "while", "do"],
 	"requireDotNotation": true,
 	"requireFunctionDeclarations": true,
 	"requireLineBreakAfterVariableAssignment": true,
