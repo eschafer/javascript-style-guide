@@ -1,7 +1,7 @@
 {
 	"disallowEmptyBlocks": true,
-	"disallowImplicitTypeConversion": true,
-	"disallowKeywordsOnNewLine": ["else"],
+	"disallowImplicitTypeConversion": ["numeric", "boolean", "binary", "string"],
+	"disallowKeywordsOnNewLine": ["else", "catch", "finally"],
 	"disallowKeywords": ["with"],
 	"disallowMixedSpacesAndTabs": "smart",
 	"disallowMultipleLineStrings": true,
@@ -22,7 +22,7 @@
 		"beforeOpeningRoundBrace": true
 	},
 	"disallowSpacesInFunction": {
-		"beforeOpeningRoundBrace": true,
+		"beforeOpeningRoundBrace": true
 	},
 	"disallowSpacesInNamedFunctionExpression": {
 		"beforeOpeningRoundBrace": true
@@ -37,7 +37,6 @@
 
 	"maximumLineLength": 80,
 
-	"requireAnonymousFunctions": true,
 	"requireBlocksOnNewline": true,
 	"requireCamelCaseOrUpperCaseIdentifiers": true,
 	"requireCapitalizedConstructors": true,
@@ -51,11 +50,11 @@
 	"requirePaddingNewLinesInObjects": true,
 	"requireParenthesesAroundIIFE": true,
 	"requireSpaceAfterBinaryOperators": true,
-	"requireSpaceAfterKeywords": true,
+	"requireSpaceAfterKeywords": ["do", "for", "if", "else", "switch", "case", "try", "catch", "finally", "while", "return", "typeof"],
 	"requireSpaceAfterLineComment": true,
 	"requireSpaceBeforeBinaryOperators": true,
 	"requireSpaceBeforeBlockStatements": true,
-	"requireSpaceBeforeKeywords": true,
+	"requireSpaceBeforeKeywords": ["else", "catch", "finally"],
 	"requireSpaceBeforeObjectValues": true,
 	"requireSpaceBetweenArguments": true,
 	"requireSpacesInAnonymousFunctionExpression": {
